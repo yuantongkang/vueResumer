@@ -1,23 +1,32 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+  <div>
+    <TopBar/>
+    <ResumeEditor/>
+    <ResumePreview/>
   </div>
 </template>
 
+
+
 <script>
+import Topbar from './components/Topbar'
+import ResumeEditor from './components/ResumeEditor'
+import ResumePreview from './components/ResumePreview'
+
+
 export default {
-  name: 'app'
+  name: 'app',
+  data() {
+    return {
+      text: "hello"
+    }
+  },
+  components: {
+    Topbar, ResumeEditor, ResumePreview
+  }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+
 </style>
