@@ -46,7 +46,8 @@ export default {
    .page>main{
      min-width: 1024px;
      max-width: 1440px;
-     margin: 0;
+     margin-top:16px;
+     margin-bottom:16px;
      display: flex;
      justify-content: space-around;
    }
