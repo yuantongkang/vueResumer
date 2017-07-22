@@ -4,8 +4,8 @@
       <Topbar/>
     </header>
     <main>
-      <ResumeEditor/>
-      <ResumePreview/>
+      <ResumeEditor />
+      <ResumePreview />
     </main>
   </div>
 </template>
@@ -16,8 +16,8 @@
 import 'normalize.css/normalize.css'
 import './assets/reset.css'
 import Topbar from './components/Topbar'
-import ResumeEditor from './components/ResumeEditor'
 import ResumePreview from './components/ResumePreview'
+import ResumeEditor from './components/ResumeEditor'
 
 
 export default {
@@ -34,30 +34,36 @@ export default {
 </script>
 
 <style >
- .page{
-     height: 100vh;
-     display: flex;
-     flex-direction: column;
-   }
-   .page>main{
-     flex-grow: 1;  
-   }
- 
-   .page>main{
-     min-width: 1024px;
-     max-width: 1440px;
-     margin-top:16px;
-     margin-bottom:16px;
-     display: flex;
-     justify-content: space-around;
-   }
- 
-   #resumeEditor{
-     width: 35%;
-     background: #444;
-   }
-   #resumePreview{
-     width: 61.66667%;
-     background: #777;
-   }
+.page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page>main {
+  flex-grow: 1;
+}
+
+.page>main {
+  min-width: 1024px;
+  max-width: 1440px;
+  align-self: center;
+  width: 100%;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+#resumeEditor {
+  width: 35%;
+  background: #444;
+}
+
+#resumePreview {
+  flex-grow: 1;
+  margin-left: 16px;
+  background: #777;
+}
 </style>
