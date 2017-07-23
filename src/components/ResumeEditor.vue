@@ -2,14 +2,17 @@
   <div id="resumeEditor">
     <nav>
       <ol>
-        <li v-for="(item,index) in resume.visibleItems" :class="{active: item === selected}" @click="selected = item" :key="index">
+        <li v-for="(item,index) in resume.config" :class="{active: item.field === selected}" @click="selected = item.field" :key="index">
           {{index}}
+          <svg class="icon">
+            <use :xlink:href="`#icon-${item.icon}`"></use>
+          </svg>
         </li>
       </ol>
     </nav>
     <ol class="panels">
-      <li v-for="item in resume.visibleItems" v-show="item === selected" :key="item">
-        {{resume[item]}}
+      <li v-for="item in resume.config" v-show="item.field === selected" :key="item">
+        {{resume[item.field]}}
       </li>
     </ol>
   </div>
@@ -22,18 +25,24 @@ export default {
     return {
       selected: 'profile',
       resume: {
-        visibleItems: ['profile', 'work history', 'education', 'projects', 'awards', 'contacts', 'others'],
+        config: [
+          { field: 'profile', icon: 'id' },
+          { field: 'work history', icon: 'work' },
+          { field: 'education', icon: 'book' },
+          { field: 'projects', icon: 'heart' },
+          { field: 'awards', icon: 'cup' },
+          { field: 'contacts', icon: 'phone' },
+        ],
         profile: {
           name: '',
           city: '',
           title: ''
         },
-       'work history': [],
+        'work history': [],
         education: [],
         projects: [],
         awards: [],
-        contacts: [],
-        others: []
+        contacts: []
       }
     }
   }
@@ -67,6 +76,11 @@ export default {
       }
     }
   }
+}
+
+svg.icon {
+  width: 24px; // 原设计稿 32px 不好看，改成 24px
+  height: 24px;
 }
 
 ol {
