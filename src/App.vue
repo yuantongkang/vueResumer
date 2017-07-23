@@ -13,6 +13,7 @@
 
 
 <script>
+import icons from './assets/icons'
 import 'normalize.css/normalize.css'
 import './assets/reset.css'
 import Topbar from './components/Topbar'
@@ -29,6 +30,9 @@ export default {
   },
   components: {
     Topbar, ResumeEditor, ResumePreview
+  },
+  created() {
+    document.body.insertAdjacentHTML('afterbegin', icons) //
   }
 }
 </script>
@@ -39,9 +43,8 @@ export default {
   display: flex;
   flex-direction: column;
   background: #EAEBEC;
-  >main{
-  flex-grow: 1;  
-
+  >main {
+    flex-grow: 1;
   }
   >main {
     min-width: 1024px;
